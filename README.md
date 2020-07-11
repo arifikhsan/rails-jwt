@@ -2,7 +2,7 @@
 
 Database PostgreSQL
 
-username: postgres
+username: postgres  
 password: postgres
 
 ## REST
