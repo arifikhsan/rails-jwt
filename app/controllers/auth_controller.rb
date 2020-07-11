@@ -7,7 +7,7 @@ class AuthController < ApplicationController
   def register
     return render_failed if user_present
 
-    generate_user
+    create_user
   end
 
   def login
@@ -30,7 +30,7 @@ class AuthController < ApplicationController
     params.permit(:email, :password)
   end
 
-  def generate_user
+  def create_user
     User.create(register_params) ? render_failed : render_success
   end
 
