@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
 
   %w[failed success welcome].each do |method|
     define_method "render_#{method}" do
-      render json: { message: method }
+      render_message method
     end
   end
 
