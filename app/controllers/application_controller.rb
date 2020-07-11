@@ -1,14 +1,9 @@
 class ApplicationController < ActionController::API
-  def render_failed
-    render json: { message: :failed }
-  end
 
-  def render_success
-    render json: { message: :success }
-  end
-
-  def render_welcome
-    render json: { message: :welcome }
+  %w[failed success welcome].each do |method|
+    define_method "render_#{method}" do
+      render json: { message: method }
+    end
   end
 
   def render_message message

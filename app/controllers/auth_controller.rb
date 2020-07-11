@@ -23,7 +23,7 @@ class AuthController < ApplicationController
   private
 
   def register_params
-    params.permit(:name, :email, :password)
+    params.require(:auth).permit(:name, :email, :password)
   end
 
   def login_params
@@ -31,7 +31,7 @@ class AuthController < ApplicationController
   end
 
   def create_user
-    User.create(register_params) ? render_failed : render_success
+    User.create(register_params) ? render_success : render_failed
   end
 
   def user_present
