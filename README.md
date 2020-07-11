@@ -25,4 +25,4 @@ Things you may want to cover:
 
 ## REST
 
-GET http://localhost:3000
+Use the postman collection
